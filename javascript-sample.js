@@ -41,13 +41,15 @@
         case 's':
             forward = below;
     }
-
+    var command = {}
     if (wallTypes.indexOf(forward.contents.type) != -1){
-        const command = { action: 'turn', metadata: turnDirection}
+         command = { action: 'turn', metadata: turnDirection}
     } else if (scaryTypes.indexOf(forward.contents.type) != -1){
-        const command = { action: 'shoot', metadata: {} } ;
+         command = { action: 'shoot', metadata: {} } ;
     } else if (scaryTypes.indexOf(forward.contents.type) != -1){
-        const command = { action: 'move', metadata: {} }
+         command = { action: 'move', metadata: {} }
+    } else {
+         command = { action: 'move', metadata: {} }
     }
 
     
