@@ -78,7 +78,7 @@
             command = {action: 'turn', metadata : {direction: turnDirection}};
         } else if (shootyTypes.indexOf(forward.contents.type) != -1){
             command = { action: 'shoot', metadata: {} };
-        } else if (getTypes.indexOf(forward.contents.type) != -1){
+        } else if (goodTypes.indexOf(forward.contents.type) != -1){
             command = { action: 'move', metadata: {} };
         } else {
             command = { action: 'move', metadata: {} };
