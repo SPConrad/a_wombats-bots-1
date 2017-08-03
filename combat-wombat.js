@@ -53,12 +53,12 @@
     }
 
     var command = {}
-    var goForFood = false; 
+    var shooty = false; 
     for (var i = 0; i < 4; i ++) {
         ///0 = n, 1 = s, 2 = w, 3 = e
-        if (goodTypes.indexOf(adjacents[i].content.contents.type) != -1){
+        if (shootyTypes.indexOf(adjacents[i].content.contents.type) != -1){
             ///it's a food item, get it
-            goForFood = true;
+            shooty = true;
             var directionToGo = adjacents[i].direction;
             if (orientation == directionToGo){
                 command = {action: 'move', metadata : {} };
@@ -73,12 +73,13 @@
             }
         }
     };
-    if (goForFood == false){
+    if (shooty == false){
         if (turnyTypes.indexOf(forward.contents.type) != -1){
             command = {action: 'turn', metadata : {direction: turnDirection}};
-        } else if (shootyTypes.indexOf(forward.contents.type) != -1){
-            command = { action: 'shoot', metadata: {} };
         } else {
+            if (index > 8){
+                command = {action: 'turn', metadata : {direction: turnDirection}};
+            } else 
             command = { action: 'move', metadata: {} };
         }
     }
