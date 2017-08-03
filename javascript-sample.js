@@ -76,7 +76,7 @@
     if (goForFood == false){
         if (turnyTypes.indexOf(forward.contents.type) != -1){
             command = {action: 'turn', metadata : {direction: turnDirection}};
-        } else if (scaryTypes.indexOf(forward.contents.type) != -1){
+        } else if (shootyTypes.indexOf(forward.contents.type) != -1){
             command = { action: 'shoot', metadata: {} };
         } else if (getTypes.indexOf(forward.contents.type) != -1){
             command = { action: 'move', metadata: {} };
