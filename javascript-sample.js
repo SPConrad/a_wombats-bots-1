@@ -63,11 +63,11 @@
             if (orientation == directionToGo){
                 command = {action: 'move', metadata : {} };
             } else {
-                if ((orientation == w && directionToGo == s) || (orientation == s && directionToGo == e) || (orientation == e && directionToGo == n) || (orientation = n && directionToGo == w)){
+                if ((orientation == "w" && directionToGo == "s") || (orientation == "s" && directionToGo == "e")  || (orientation == "e" && directionToGo == "n")  || (orientation = "n" && directionToGo == "w") ){
                     command = {action: 'turn', metadata : {direction: 'left'}}
-                } else if ((orientation == w && directionToGo == n) || (orientation == n && directionToGo == e) || (orientation == e && directionToGo == s) || (orientation = s && directionToGo == w)){
+                } else if ((orientation == "w" && directionToGo == "n")  || (orientation == "n" && directionToGo == "e")  || (orientation == "e" && directionToGo == "s")  || (orientation = "s" && directionToGo == "w") ){
                     command = {action: 'turn', metadata : {direction: 'right'}}
-                } else if ((orientation == w && directionToGo == e) || (orientation == e && directionToGo == w) || (orientation == n && directionToGo == s) || (orientation = s && directionToGo == n)){
+                } else if ((orientation == "w" && directionToGo == "e")  || (orientation == "e" && directionToGo == "w")  || (orientation == "n" && directionToGo == "s")  || (orientation = "s" && directionToGo == "n") ){
                     command = {action: 'turn', metadata : {direction: 'about-face'}}
                 }
             }
